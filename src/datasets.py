@@ -248,7 +248,7 @@ class GTEADataset(Dataset):
                 img_arr = np.tile(img_arr, [3, 1, 1]).transpose(1, 2, 0) 
             return img_arr
         image = read_image(img_name)
-        mask = np.array(Image.open(msk_name).resize((625,468)))
+        mask = np.array(Image.open(msk_name).resize((625,468)).convert("P"))
         if img_name != msk_name:
             assert len(mask.shape) == 2, 'Masks must be encoded without colourmap'
         sample = {'image': image, 'mask': mask}

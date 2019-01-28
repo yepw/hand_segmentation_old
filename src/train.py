@@ -167,7 +167,7 @@ def create_loaders(
     from torchvision import transforms
     from torch.utils.data import DataLoader, random_split
     # Custom libraries
-    from datasets import NYUDataset as Dataset
+    from datasets import GTEADataset as Dataset
     from datasets import Pad, RandomCrop, RandomMirror, ResizeShorterScale, ToTensor, Normalise
     
     ## Transformations during training ##
