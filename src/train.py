@@ -395,7 +395,7 @@ def main():
         ## Optimisers ##
         enc_params = []
         dec_params = []
-	print("checkpoint1")
+	
         for k,v in segmenter.named_parameters():
             if bool(re.match(".*conv1.*|.*bn1.*|.*layer.*", k)):
                 enc_params.append(v)
@@ -407,9 +407,8 @@ def main():
                                                  args.mom_enc[task_idx], args.mom_dec[task_idx],
                                                  args.wd_enc[task_idx], args.wd_dec[task_idx],
                                                  enc_params, dec_params, args.optim_dec)
-	print("checkpoint2")
+	
         for epoch in range(args.num_segm_epochs[task_idx]):
-	    print "checkpoint",epoch
             train_segmenter(segmenter, train_loader,
                             optim_enc, optim_dec,
                             epoch_start, segm_crit,

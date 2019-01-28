@@ -10,6 +10,6 @@
     "print_every": 10, 
     "random_seed": 42, 
     "snapshot_dir": "./ckpt/", 
-    "train_dir": "/home/intuitivecomputing/light-weight-refinenet/datasets/GTEA", 
-    "val_dir": "/home/intuitivecomputing/light-weight-refinenet/datasets/GTEA"
+    "train_dir": "./datasets/GTEA", 
+    "val_dir": "./datasets/GTEA"
 }

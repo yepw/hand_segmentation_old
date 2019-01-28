@@ -1,7 +1,7 @@
 import numpy as np
 
 # DATASET PARAMETERS
-TRAIN_DIR = '/home/intuitivecomputing/light-weight-refinenet/datasets/GTEA'
+TRAIN_DIR = './datasets/GTEA'
 VAL_DIR = TRAIN_DIR
 TRAIN_LIST = ['./data/train.gtea'] * 3
 VAL_LIST = ['./data/val.gtea'] * 3
@@ -25,7 +25,7 @@ ENC_PRETRAINED = True  # pre-trained on ImageNet or randomly initialised
 # GENERAL
 EVALUATE = False
 FREEZE_BN = [True] * 3
-NUM_SEGM_EPOCHS = [100] * 3
+NUM_SEGM_EPOCHS = [20] * 3
 PRINT_EVERY = 10
 RANDOM_SEED = 42
 SNAPSHOT_DIR = './ckpt/'
