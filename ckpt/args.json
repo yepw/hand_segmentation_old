@@ -3,7 +3,7 @@
     "enc": "50", 
     "enc_pretrained": true, 
     "evaluate": false, 
-    "ignore_label": 255, 
+    "ignore_label": 0, 
     "num_stages": 3, 
     "num_workers": 16, 
     "optim_dec": "sgd", 

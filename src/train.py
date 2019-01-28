@@ -180,8 +180,8 @@ def create_loaders(
     composed_val = transforms.Compose([Normalise(*normalise_params),
                                     ToTensor()])
    '''
-    composed_trn = transforms.Compose([ToTensor()])
-    composed_val = transforms.Compose([ToTensor()])
+    composed_trn = transforms.Compose([Normalise(*normalise_params),ToTensor()])
+    composed_val = transforms.Compose([Normalise(*normalise_params),ToTensor()])
  
     ## Training and validation sets ##
     trainset = Dataset(data_file=train_list,
