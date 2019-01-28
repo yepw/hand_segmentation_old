@@ -169,7 +169,7 @@ def create_loaders(
     # Custom libraries
     from datasets import GTEADataset as Dataset
     from datasets import Pad, RandomCrop, RandomMirror, ResizeShorterScale, ToTensor, Normalise
-    '''
+    
     ## Transformations during training ##
     composed_trn = transforms.Compose([ResizeShorterScale(shorter_side, low_scale, high_scale),
                                     Pad(crop_size, [123.675, 116.28 , 103.53], ignore_label),
@@ -179,10 +179,10 @@ def create_loaders(
                                     ToTensor()])
     composed_val = transforms.Compose([Normalise(*normalise_params),
                                     ToTensor()])
-   '''
+    '''
     composed_trn = transforms.Compose([Normalise(*normalise_params),ToTensor()])
     composed_val = transforms.Compose([Normalise(*normalise_params),ToTensor()])
- 
+    '''
     ## Training and validation sets ##
     trainset = Dataset(data_file=train_list,
                        data_dir=train_dir,
