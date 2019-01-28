@@ -10,7 +10,7 @@ f2 = open('val.gtea', 'w')
 for path, subdirs, files in os.walk(root):
     for name in files:
         print name
-	im = Image.open('Images/'+name)
+	im = Image.open('Images/'+name).resize((625,468))
 	name = name[0:len(name)-3]+'png'
 	im.save('Images/'+name)
 	if random.random()<0.8:
