@@ -5,15 +5,13 @@ from PIL import Image
 root_dir= './'
 
 
-img_name = './s1_cheese_0000000460.png'
+img_name = './Masks/s1_cheese_0000000460.png'
 
-def read_image(x):
-    img_arr = np.array(Image.open(x).resize((625,468)))
-    if len(img_arr.shape) == 2: # grayscale
-	print('grayscale')
-        img_arr = np.tile(img_arr, [3, 1, 1]).transpose(1, 2, 0) 
-    return img_arr
-        
-image = read_image(img_name)
+img = Image.open(img_name)
 	
+image = np.array(img)
+
+color = img.getcolors()
+print color
+
 print(image)

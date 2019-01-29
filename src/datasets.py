@@ -199,9 +199,7 @@ class NYUDataset(Dataset):
                 img_arr = np.tile(img_arr, [3, 1, 1]).transpose(1, 2, 0)
             return img_arr
         image = read_image(img_name)
-	print(image)
         mask = np.array(Image.open(msk_name))
-	print(mask)
         if img_name != msk_name:
             assert len(mask.shape) == 2, 'Masks must be encoded without colourmap'
         sample = {'image': image, 'mask': mask}
@@ -251,7 +249,7 @@ class GTEADataset(Dataset):
             return img_arr
         image = read_image(img_name)
 	# print(image)
-        mask = 255 - np.array(Image.open(msk_name))
+        mask = np.array(Image.open(msk_name))
         # print(mask)
         if img_name != msk_name:
             assert len(mask.shape) == 2, 'Masks must be encoded without colourmap'
