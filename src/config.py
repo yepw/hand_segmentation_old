@@ -2,7 +2,7 @@ import numpy as np
 
 # DATASET PARAMETERS
 TRAIN_DIR = './datasets/GTEA'
-VAL_DIR = TRAIN_DIR
+VAL_DIR = './datasets/GTEA'
 TRAIN_LIST = ['./data/train.gtea'] * 3
 VAL_LIST = ['./data/val.gtea'] * 3
 SHORTER_SIDE = [350] * 3

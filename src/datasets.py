@@ -251,7 +251,7 @@ class GTEADataset(Dataset):
             return img_arr
         image = read_image(img_name)
 	# print(image)
-        mask = np.array(Image.open(msk_name))
+        mask = 255 - np.array(Image.open(msk_name))
         # print(mask)
         if img_name != msk_name:
             assert len(mask.shape) == 2, 'Masks must be encoded without colourmap'
