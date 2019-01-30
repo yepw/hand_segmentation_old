@@ -2,7 +2,7 @@ import six
 import sys
 sys.path.append('../../')
 
-from models.resnet import rf_lw50, rf_lw101, rf_lw152
+from models.resnet import ResNetLW Bottleneck
 from utils.helpers import prepare_img
 import matplotlib 
 
@@ -17,11 +17,12 @@ from PIL import Image
 
 cmap = np.load('../../utils/cmap.npy')
 has_cuda = torch.cuda.is_available()
-img_dir = '../imgs/NYU/'
+img_dir = '../imgs/GETA/'
 imgs = glob.glob('{}*[0-9].png'.format(img_dir))
 n_classes = 40
 
 # Initialise models
+'''
 model_inits = { 
     'rf_lw50_nyu'    : rf_lw50,
     'rf_lw101_nyu'   : rf_lw101, # key / constructor
@@ -34,7 +35,12 @@ for key,fun in six.iteritems(model_inits):
     if has_cuda:
         net = net.cuda()
     models[key] = net
-
+'''
+model = ResNetLW(Bottleneck, [3, 4, 6, 3], num_classes=num_classes)
+model = model.load_state_dict(torch.load(cached_file, map_location=map_location), strict=False)
+model = model.eval()
+model = model.cuda()
+    
 # Figure 4 from the supplementary
 n_cols = len(models) + 2 # 1 - for image, 1 - for GT
 n_rows = len(imgs)
